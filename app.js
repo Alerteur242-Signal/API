@@ -3,7 +3,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const helmet = require('helmet');
 const path = require('path');
-const Vonage = require('@vonage/server-sdk');
 const cors = require('cors')
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -27,6 +26,7 @@ mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PWD}@${DB_URL}/${DB_NAME}?retryW
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var authRouter = require('./routes/auth');
 
 var app = express();
 
@@ -41,7 +41,8 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/auth', authRouter);
 
 
 

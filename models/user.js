@@ -9,7 +9,7 @@ const user = new mongoose.Schema({
         type: String,
         required: true
     },
-    phone: {
+    phoneNumber: {
         type: String,
         required: true,
         unique: true,
@@ -29,6 +29,13 @@ const user = new mongoose.Schema({
         required: true,
         default: false
     },
+    lastOTP: {
+        type: Number,
+        required: false
+    },
+},
+{
+  timestamps : true
 });
 
-export default mongoose.model('User', user);
+module.exports = mongoose.model('User', user);
