@@ -104,8 +104,8 @@ function onListening() {
  * Démarage du serveur ngrok
  */
 
-(async function () {
-  await ngrok.connect(port)
-    .then(url => console.log(`Ngrok server is running on : ${url}`))
-    .catch(err => console.log(err));
-})();
+// (async function () {
+//   await ngrok.connect(port)
+//     .then(url => console.log(`Ngrok server is running on : ${url}`))
+//     .catch(err => console.log(err));
+// })();
