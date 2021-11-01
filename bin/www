@@ -7,7 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('mokebisi-api:server');
 var http = require('http');
-const ngrok = require('ngrok');
 
 /**
  * Get port from environment and store in Express.
@@ -99,13 +98,3 @@ function onListening() {
     'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
-/**
- * Démarage du serveur ngrok
- */
-
-// (async function () {
-//   await ngrok.connect(port)
-//     .then(url => console.log(`Ngrok server is running on : ${url}`))
-//     .catch(err => console.log(err));
-// })();
